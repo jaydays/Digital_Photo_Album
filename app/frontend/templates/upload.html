@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Upload Image</title>
+	<style>
+		body {
+			background-color: rgb(0, 173, 238);
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+			font-family: Courier;
+			font-size: 18px;
+			color: black;
+		}
+
+		h2 {
+			font-size: 36px;
+			text-align: center;
+			margin-bottom: 20px;
+		}
+
+		p {
+			font-size: 22px;
+			margin-bottom: 20px;
+		}
+
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: 20px;
+		}
+
+		label {
+			margin-bottom: 10px;
+		}
+
+		input[type="text"], input[type="file"] {
+			padding: 10px;
+			margin-bottom: 10px;
+			border-radius: 5px;
+			border: none;
+			background-color: rgb(245, 245, 245);
+			font-size: 16px;
+			width: 300px;
+			height: 30px;
+			transition: background-color 0.3s ease-in-out;
+		}
+
+		input[type="text"]:focus, input[type="file"]:focus {
+			background-color: rgb(130, 130, 130);
+			outline: none;
+		}
+
+		input[type="submit"] {
+			padding: 10px 30px;
+			background-color: rgb(245, 245, 245);
+			border: none;
+			border-radius: 5px;
+			font-size: 16px;
+			cursor: pointer;
+			transition: background-color 0.3s ease-in-out;
+		}
+
+		input[type="submit"]:hover {
+			background-color: rgb(130, 130, 130);
+		}
+
+		a {
+			text-decoration: none;
+			color: white;
+			font-size: 20px;
+			margin-left: 20px;
+		}
+
+		a:hover {
+			color: rgb(130, 130, 130);
+		}
+	</style>
+</head>
+<body>
+	<h2>Upload an Image to the Database</h2>
+
+	<p>Select Key and Image to be chosen for upload</p>
+    <br style="line-height: 20px;">
+	<form action="{{ url_for('upload_pic')}}" method="post" enctype="multipart/form-data">
+		<label for="key">Key:</label>
+		<input type="text" id="key" name="key">
+        <br style="line-height: 20px;">
+
+		<label for="myfile">Select an Image:</label>
+		<input type="file" id="myfile" name="myfile">
+        <br style="line-height: 20px;">
+		<input type="submit" value="Upload" style="font-family:Courier;">
+        <br style="line-height: 20px;">
+	</form>
+
+	<a href="home_page" style="margin-right: 15px;" target="_self">Back to Home Page</a>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Files</title>
+</head>
+<body>
+    <h1>View Files</h1>
+    <table>
+        <tr>
+            <th>Filename</th>
+            <th>Hash Key</th>
+        </tr>
+        {% for file in files %}
+        <tr>
+            <td>{{ file.filename }}</td>
+            <td>{{ file.hash_key }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mem-Cache Configuration</title>
+	<style>
+		body {
+			background-color: rgb(179, 95, 210);
+			font-family: monospace;
+            display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+
+		h1 {
+            font-family: monospace;
+			font-size: 250%;
+			text-align: center;
+			color: black;
+			margin-top: 0;
+			margin-bottom: 20px;
+			padding-top: 20px;
+		}
+
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 50px;
+			color: white;
+		}
+
+		label {
+			font-size: 20px;
+			margin-bottom: 10px;
+		}
+
+		select {
+			font-size: 18px;
+			padding: 5px;
+			border-radius: 5px;
+			border: none;
+			background-color: white;
+			color: black;
+			margin-bottom: 20px;
+		}
+
+		input[type="submit"] {
+			background-color: white;
+			color: black;
+			font-size: 20px;
+			padding: 10px;
+			border-radius: 5px;
+			border: none;
+			cursor: pointer;
+		}
+
+		input[type="submit"]:hover {
+			background-color: black;
+			color: white;
+		}
+
+		a {
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            margin-top: 20px;
+            font-family:Courier;
+	    }
+
+	    a:hover {
+		    color: black;
+	    }
+
+	</style>
+</head>
+<body>
+	<h1>Resizing Policy</h1>
+
+	<form action="apply_resize_policy" method="POST">
+		<label for="resize-policy">Resize Policy:</label>
+		<select name="resize-policy" id="replacement-policy" style="font-family: monospace;">
+			<option value="Manual" style="font-family: monospace;">Manual</option>
+			<option value="Automatic" style="font-family: monospace;">Automatic</option>
+		</select>
+
+		<br><br><input type="submit" value="Apply Policy", style="font-family: monospace;">
+
+	</form>
+
+	<br><br><a style="font-family:Courier;text-align:center;" href="home_page" target="_self">Back to Home Page</a>
+
+</body>
+</html>

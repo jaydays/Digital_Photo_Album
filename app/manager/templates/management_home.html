@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home Page</title>
+	<body style="background-color:rgb(179, 95, 210);"/>
+	<h1 style="text-align:center;font-size:250%;font-family:Courier;"> Mem-Cache Management</h1>
+	<style>
+		body {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+		}
+		
+		.row {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: 20px;
+		}
+		
+		.icon {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			margin: 10px;
+			width: 340px;
+			height: 340px;
+			cursor: pointer;
+			background-color: rgb(245, 245, 245);
+			border-radius: 10px;
+			transition: background-color 0.3s ease-in-out;
+		}
+		
+		.icon:hover {
+			background-color: rgb(130, 130, 130);
+		}
+		
+		.text-box {
+			background-color: white;
+			border: 1px solid black;
+			border-radius: 10px;
+			padding: 20px;
+			margin: 20px;
+			width: 280px;
+			height: 150px;
+			font-family: Courier;
+			text-align: center;
+		}
+		
+		.text-box h2 {
+			margin-top: 0;
+			font-size: 100%;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="row">
+		<div class="icon" onclick="location.href='memcache_info';">
+			<img src="./static/icons/display_nodes.png" alt= "Mem-Cache  Icon" width="160px" height="140px">
+			<p style="font-family:Courier;"> Mem-Cache Info</p>
+		</div>
+		<div class="icon" onclick="location.href='c_r_policy';">
+			<img src="./static/icons/capacity_p.png" alt="Mem-Cache Capacity & Replacement Policy Icon" width="160px" height="140px">
+			<p style="font-family:Courier;"> Capacity & Replacement Policy</p>
+		</div>
+		<div class="icon" onclick="location.href='resize_policy';">
+			<img src="./static/icons/resize_p.png" alt="Mem-Cache Resizing Policy Icon" width="160px" height="140px">
+			<p style="font-family:Courier;"> Resizing Policy</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="icon" onclick="location.href='clear';">
+			<img src="./static/icons/clear_memcache.png" alt="Clear Mem-Cache Data Icon" width="160px" height="140px">
+			<p style="font-family:Courier;"> Clear Mem-Cache Data</p>
+		</div>
+		<div class="icon" onclick="location.href='delete_all';">
+			<img src="./static/icons/delete_all.png" alt="Delete All Icon Icon" width="160px" height="140px">
+			<p style="font-family:Courier;"> Delete All App Data</p>
+		</div>
+		<!-- Note that if Flask instance 2 is running on a different machine,
+			 you will need to replace "localhost"
+			 with the IP address or domain name of that machine. -->
+		<div class="icon" onclick="location.href='{{ url }}';">
+			<img src="./static/icons/go_home.png" alt="Go Home Icon" width="160px" height="140px">
+			<p style="font-family:Courier;"> Back To Home</p>
+		</div>
+	</div>
+</body>
+</html>

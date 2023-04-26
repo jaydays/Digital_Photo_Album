@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Files</title>
+</head>
+<body>
+    <h1>Upload Files</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="text" name="hash_key" placeholder="Hash Key">
+        <input type="text" name="filename" placeholder="Filename">
+        <input type="submit" value="Upload">
+    </form>
+    <br>
+    <h1>View Files</h1>
+    <form action="/files" method="get">
+        <input type="submit" value="View Files">
+    </form>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home Page</title>
+	<body style="background-color:rgb(0, 173, 238);"/>
+	<h1 style="text-align:center;font-size:250%;font-family:Courier;"> Group 15 - A2</h1>
+	<style>
+		body {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+		}
+
+		.row {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: 20px;
+		}
+
+		.icon {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			margin: 10px;
+			width: 250px;
+			height: 250px;
+			cursor: pointer;
+			background-color: rgb(245, 245, 245);
+			border-radius: 10px;
+			transition: background-color 0.3s ease-in-out;
+		}
+
+		.icon:hover {
+			background-color: rgb(130, 130, 130);
+		}
+
+		.text-box {
+			background-color: white;
+			border: 1px solid black;
+			border-radius: 10px;
+			padding: 20px;
+			margin: 20px;
+			width: 870px;
+			height: 150px;
+			font-family: Courier;
+			text-align: center;
+		}
+
+		.text-box h2 {
+			margin-top: 0;
+			font-size: 100%;
+		}
+	</style>
+</head>
+<body>
+	<div class="text-box">
+			<h2>Latest Mem-Cache Size Updates</h2>
+			<p>{{update1}}</p>
+			<p>{{update2}}</p>
+			<p>{{update3}}</p>
+		</div>
+	<div class="row">
+		<div class="icon" onclick="location.href='upload';">
+			<img src="./static/icons/upload.png" alt="Upload Icon" width="160px" height="140px">
+			<p style="font-family:Courier;"> Upload an Image</p>
+		</div>
+		<div class="icon" onclick="location.href='retrieve';">
+			<img src="./static/icons/retrieve.png" alt="Retrieve Icon" width="160px" height="140px">
+			<p style="font-family:Courier;"> Retrieve an Image</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="icon" onclick="location.href='show_contents';">
+			<img src="./static/icons/display_db.png" alt="Display Contents Icon" width="160px" height="140px">
+			<p style="font-family:Courier;"> Display DB and MemCache Contents</p>
+		</div>
+		<!-- Note that if Flask instance 2 is running on a different machine,
+			 you will need to replace "localhost" with the IP address
+			 or domain name of that machine. -->
+		<div class="icon" onclick="location.href='{{ url }}';">
+			<img src="./static/icons/manage_memcache.png" alt="Manage Mem-Cache Icon" width="160px" height="140px">
+			<p style="font-family:Courier;"> Manage Mem-Cache</p>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mem-Cache Configuration</title>
+	<style>
+		body {
+			background-color: rgb(179, 95, 210);
+			font-family: monospace;
+            display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+
+		h1 {
+            font-family: monospace;
+			font-size: 250%;
+			text-align: center;
+			color: black;
+			margin-top: 0;
+			margin-bottom: 20px;
+			padding-top: 20px;
+		}
+
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 50px;
+			color: white;
+		}
+
+		label {
+			font-size: 20px;
+			margin-bottom: 10px;
+		}
+
+		select {
+			font-size: 18px;
+			padding: 5px;
+			border-radius: 5px;
+			border: none;
+			background-color: white;
+			color: black;
+			margin-bottom: 20px;
+		}
+
+		input[type="submit"] {
+			background-color: white;
+			color: black;
+			font-size: 20px;
+			padding: 10px;
+			border-radius: 5px;
+			border: none;
+			cursor: pointer;
+		}
+
+		input[type="submit"]:hover {
+			background-color: black;
+			color: white;
+		}
+
+		a {
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            margin-top: 20px;
+            font-family:Courier;
+	    }
+
+	    a:hover {
+		    color: black;
+	    }
+
+	</style>
+</head>
+<body>
+	<h1>Capacity and Replacement Policy</h1>
+
+	<form action="apply_c_r_policy" method="POST">
+		<label for="replacement-policy">Replacement Policy:</label>
+		<select name="replacement-policy" id="replacement-policy" style="font-family: monospace;">
+			<option value="LRU" style="font-family: monospace;">LRU</option>
+			<option value="RANDOM" style="font-family: monospace;">RANDOM</option>
+		</select>
+
+		<label for="mem-cache-capacity">Mem-Cache Capacity:</label>
+		<select name="mem-cache-capacity" id="mem-cache-capacity" style="font-family: monospace;">
+			<option value="10MB" style="font-family: monospace;">10MB </option>
+			<option value="20MB" style="font-family: monospace;">20MB</option>
+			<option value="30MB" style="font-family: monospace;">30MB</option>
+			<option value="40MB" style="font-family: monospace;">40MB</option>
+		</select>
+
+		<br><br><input type="submit" value="Apply Configuration", style="font-family: monospace;">
+
+	</form>
+
+	<br><br><a style="font-family:Courier;text-align:center;" href="home_page" target="_self">Back to Home Page</a>
+
+</body>
+</html>

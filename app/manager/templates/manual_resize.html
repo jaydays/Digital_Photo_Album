@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Active Nodes</title>
+	<style>
+		body {
+			background-color: rgb(179, 95, 210);
+			font-family: monospace;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+
+		h1 {
+			font-size: 250%;
+			text-align: center;
+			color: black;
+			margin-top: 0;
+			margin-bottom: 20px;
+			padding-top: 20px;
+		}
+
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 50px;
+			color: white;
+		}
+
+		label {
+			font-size: 20px;
+			margin-bottom: 10px;
+		}
+
+		input[type="submit"] {
+			background-color: white;
+			color: black;
+			font-size: 20px;
+			padding: 10px;
+			border-radius: 5px;
+			border: none;
+			cursor: pointer;
+		}
+
+		input[type="submit"]:hover {
+			background-color: black;
+			color: white;
+		}
+
+		button {
+            background-color: white;
+            color: black;
+            font-size: 20px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+		button:hover {
+			background-color: black;
+			color: white;
+		}
+
+        .round-button {
+            font-size: 40px;
+			height: 100px;
+			width: 100px;
+            border-radius: 50%;
+        }
+
+		#active-nodes {
+			font-size: 30px;
+			margin-top: 30px;
+			color: white;
+		}
+
+		a {
+			text-decoration: none;
+			color: white;
+			font-size: 20px;
+			margin-top: 20px;
+			font-family: Courier;
+		}
+
+		a:hover {
+			color: black;
+		}
+	</style>
+</head>
+<body>
+	<h1>Active Nodes</h1>
+
+	<form action="/apply_manual_resize" method="POST">
+		<label for="active-nodes"  style="font-family: monospace;">Number of Active Nodes:</label>
+		<p id="active-nodes"  style="font-family: monospace;" >{{ active_nodes }} </p>
+		<div>
+			<button class="round-button" type="button" onclick="decrease()"> - </button>
+			<button class="round-button" type="button" onclick="increase()">+</button>
+		</div>
+		<input type="hidden" id="active-nodes-input" name="active-nodes" value="{{ active_nodes }}">
+		<br><br><input type="submit" value="Submit"  style="font-family: monospace;">
+
+	</form>
+
+	<br><br><a href="/home_page" target="_self">Back to Home Page</a>
+
+	<script>
+		var activeNodes = parseInt(document.getElementById("active-nodes").textContent);
+		var activeNodesInput = document.getElementById("active-nodes-input");
+
+		function increase() {
+			if (activeNodes < 8) {
+				activeNodes++;
+				activeNodesInput.value = activeNodes;
+				document.getElementById("active-nodes").textContent = activeNodes;
+			}
+		}
+
+		function decrease() {
+			if (activeNodes > 1) {
+				activeNodes--;
+				activeNodesInput.value = activeNodes;
+				document.getElementById("active-nodes").textContent = activeNodes;
+			}
+		}
+	</script>
+</body>
+</html>

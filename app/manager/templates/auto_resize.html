@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AutoScaler Configuration</title>
+	<style>
+		body {
+			background-color: rgb(179, 95, 210);
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+			font-family: Courier;
+			font-size: 18px;
+			color: black;
+		}
+		h2 {
+		font-size: 36px;
+		text-align: center;
+		margin-bottom: 20px;
+	}
+
+	p {
+		font-size: 22px;
+		margin-bottom: 20px;
+		color: white;
+	}
+
+	form {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 20px;
+	}
+
+	label {
+		margin-bottom: 10px;
+	}
+
+	input[type="text"] {
+		padding: 10px;
+		margin-bottom: 10px;
+		border-radius: 5px;
+		border: none;
+		background-color: rgb(245, 245, 245);
+		font-size: 16px;
+		width: 300px;
+		height: 30px;
+		transition: background-color 0.3s ease-in-out;
+	}
+
+	input[type="text"]:focus {
+		background-color: rgb(130, 130, 130);
+		outline: none;
+	}
+
+	input[type="submit"] {
+		padding: 10px 30px;
+		background-color: rgb(245, 245, 245);
+		border: none;
+		border-radius: 5px;
+		font-size: 16px;
+		cursor: pointer;
+		transition: background-color 0.3s ease-in-out;
+	}
+
+	input[type="submit"]:hover {
+		background-color: rgb(130, 130, 130);
+	}
+
+	.container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 20px;
+	}
+
+	.container label {
+		margin: 0;
+		padding: 0;
+		font-size: 20px;
+	}
+
+	.container input[type="text"] {
+		width: 100px;
+		margin: 5px;
+		text-align: center;
+		font-size: 16px;
+	}
+    a {
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            margin-top: 20px;
+            font-family:Courier;
+	    }
+
+	    a:hover {
+		    color: black;
+	    }
+</style>
+</head>
+<body>
+	<h2>AutoScaler Configuration</h2>
+	<p>Configure the AutoScaler settings below:</p>
+<br>
+
+<form action="/apply_auto_resize" method="POST">
+	<div class="container">
+		<label for="max_miss_rate">Max Miss Rate:</label>
+		<input type="text" id="max_miss_rate" name="max_miss_rate">
+	</div>
+
+	<div class="container">
+		<label for="min_miss_rate">Min Miss Rate:</label>
+		<input type="text" id="min_miss_rate" name="min_miss_rate">
+	</div>
+
+	<div class="container">
+		<label for="expand_ratio">Expand Ratio:</label>
+		<input type="text" id="expand_ratio" name="expand_ratio">
+	</div>
+
+	<div class="container">
+		<label for="shrink_ratio">Shrink Ratio:</label>
+		<input type="text" id="shrink_ratio" name="shrink_ratio">
+	</div>
+    <br><br>
+	<input type="submit" value="Save" style="font-family:Courier;">
+	<br>
+</form>
+	<a href="home_page" target="_self">Back to Home Page</a>
+</body>
+</html>
